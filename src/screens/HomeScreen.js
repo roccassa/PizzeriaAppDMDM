@@ -4,9 +4,8 @@ import { SafeAreaView,
   View, 
   TouchableOpacity, 
   StyleSheet, 
-  Alert,
-  BackHandler,
-  Platform } from "react-native";
+  Alert
+   } from "react-native";
 
 
 export default function HomeScreen(props){
@@ -22,21 +21,23 @@ export default function HomeScreen(props){
      const goToOrdenesScreen = ()=>{
         navigation.navigate("Ordenes");
     }
+
     const exitButton = ()=>{
         Alert.alert(
-      "Cerrar sesión",
-      "¿Estás seguro de que quieres salir?",
-      [
-        { text: "Cancelar", style: "cancel" },
-        { 
-          text: "Sí, salir", 
-          onPress: () => {
-            navigation.navigate('Login');
-          }
-        }
-        ]
-    )
-    }
+          "Cerrar sesión",
+          "¿Estás seguro de que quieres salir?",
+            [
+              { text: "Cancelar", style: "cancel" },
+                { 
+                  text: "Sí, salir", 
+                  onPress: () => {
+                    navigation.navigate('Login');
+                  }
+                }
+            ]
+        )
+      }
+
 
    
 
@@ -72,48 +73,48 @@ return (
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#f3e9b4ff', 
-    alignItems: 'center',
-    paddingTop: 80, 
-  },
+      flex: 1,
+      backgroundColor: '#f3e9b4ff', 
+      alignItems: 'center',
+      paddingTop: 80, 
+    },
   titleHome: {
-    fontSize: 28,
-    color: '#000',
-    marginBottom: 100, 
-    marginTop: 10,
-    fontWeight: 'bold'
-  },
+      fontSize: 28,
+      color: '#000',
+      marginBottom: 100, 
+      marginTop: 10,
+      fontWeight: 'bold'
+    },
   buttonsContainer: {
-    width: '100%',
-    alignItems: 'center',
-    flex: 1, 
-  },
+      width: '100%',
+      alignItems: 'center',
+      flex: 1, 
+    },
   menuButton: {
-    backgroundColor: '#A3B1FF', 
-    width: '60%', 
-    paddingVertical: 18,
-    borderRadius: 15,
-    alignItems: 'center',
-    marginBottom: 100, 
-  },
+      backgroundColor: '#A3B1FF', 
+      width: '60%', 
+      paddingVertical: 18,
+      borderRadius: 15,
+      alignItems: 'center',
+      marginBottom: 100, 
+    },
   usButton: {
-    width: '40%', 
-  },
+      width: '40%', 
+    },
   menuButtonText: {
-    color: '#000',
-    fontSize: 16,
-  },
+      color: '#000',
+      fontSize: 16,
+    },
   exitButton: {
-    backgroundColor: '#ff0000ff', 
-    paddingVertical: 10,
-    paddingHorizontal: 30,
-    borderRadius: 20,
-    marginBottom: 70,
-  },
+      backgroundColor: '#ff0000ff', 
+      paddingVertical: 10,
+      paddingHorizontal: 30,
+      borderRadius: 20,
+      marginBottom: 70,
+    },
   exitButtonText: {
-    color: '#000',
-    fontSize: 14,
-    fontWeight: 'bold',
-  }
+      color: '#000',
+      fontSize: 14,
+      fontWeight: 'bold',
+    }
 });

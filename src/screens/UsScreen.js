@@ -83,63 +83,63 @@ export default function UsScreen(props){
 }
 
 const styles = StyleSheet.create({
-  
-container: {
-    backgroundColor: '#f3e9b4ff', 
-    alignItems: 'center',
-    paddingTop: 20, 
-  },
-safeArea: {
-    flex: 1,
-    backgroundColor: "#f3e9b4",
-  },
-  titleUS: {
-    fontSize: 28,
-    color: '#000',
-    marginBottom: 10, 
-    marginTop: 60,
-    fontWeight: 'bold'
-  },
- description: {
-    fontSize: 16,
-    textAlign: "center",
-    marginBottom: 25,
-    color: "#444",
-  },
-  section: {
-    marginBottom: 25,
-    paddingHorizontal: 20,
-  },
-  subtitle: {
-    paddingLeft: 20,
-    fontSize: 22,
-    fontWeight: "600",
-    marginBottom: 8,
-  },
-  text: {
-    fontSize: 16,
-    lineHeight: 22,
-    color: "#555",
-  },
+    
+    container: {
+        backgroundColor: '#f3e9b4ff', 
+        alignItems: 'center',
+        paddingTop: 20, 
+    },
+    safeArea: {
+        flex: 1,
+        backgroundColor: "#f3e9b4",
+    },
+    titleUS: {
+        fontSize: 28,
+        color: '#000',
+        marginBottom: 10, 
+        marginTop: 60,
+        fontWeight: 'bold'
+    },
+    description: {
+        fontSize: 16,
+        textAlign: "center",
+        marginBottom: 25,
+        color: "#444",
+    },
+    section: {
+        marginBottom: 25,
+        paddingHorizontal: 20,
+    },
+    subtitle: {
+        paddingLeft: 20,
+        fontSize: 22,
+        fontWeight: "600",
+        marginBottom: 8,
+    },
+    text: {
+        fontSize: 16,
+        lineHeight: 22,
+        color: "#555",
+    },
     listItem: {
-    fontSize: 16,
-    marginBottom: 4,
-  },
-  buttonsContainer: {
-  width: '100%',
-    alignItems: 'center',
-    flex: 1, 
-  },
-  exitButton: {
-    backgroundColor: '#ff0000ff', 
-    paddingVertical: 10,
-    paddingHorizontal: 30,
-    borderRadius: 20,
-    marginBottom: 70,
-  },
-  exitButtonText: {
-    color: '#000',
-    fontSize: 14,
-    fontWeight: 'bold',
+        fontSize: 16,
+        marginBottom: 4,
+    },
+    buttonsContainer: {
+    width: '100%',
+        alignItems: 'center',
+        flex: 1, 
+    },
+    exitButton: {
+        backgroundColor: '#ff0000ff', 
+        paddingVertical: 10,
+        paddingHorizontal: 30,
+        borderRadius: 20,
+        marginBottom: 70,
+    },
+    exitButtonText: {
+        color: '#000',
+        fontSize: 14,
+        fontWeight: 'bold',
   }
 });
