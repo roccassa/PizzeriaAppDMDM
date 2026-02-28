@@ -15,7 +15,7 @@ export default function NavigationStackPizzeria(){
     return(
         <Stack.Navigator>
             <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false}} />
-            <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: true}} />
+            <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false}} />
             <Stack.Screen name="Customer" component={CustomerScreen} options={{ headerShown: true}} />
             <Stack.Screen name="Menu" component={MenuScreen} options={{ headerShown: true}} />
             <Stack.Screen name="Ordenes" component={OrdenesScreen} options={{ headerShown: true}} />
