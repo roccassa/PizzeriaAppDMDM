@@ -68,7 +68,7 @@ export default function LoginScreen(props){
         </View>
       <View style={styles.exitContainer}>
         <TouchableOpacity style={styles.exitButton} onPress={adios}>
-          <Text style={styles.exitButtonText}>EXIT</Text>
+          <Text style={styles.exitButtonText}>Cerrar sesión</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

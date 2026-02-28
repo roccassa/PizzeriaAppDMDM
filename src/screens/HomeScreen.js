@@ -43,7 +43,6 @@ export default function HomeScreen(props){
 return (
     <SafeAreaView style={styles.container}>
       
-   
       <Text style={styles.titleHome}>MENU PRINCIPAL</Text>
 
       <View style={styles.buttonsContainer}>
@@ -64,7 +63,7 @@ return (
       </View>
 
       <TouchableOpacity style={styles.exitButton} onPress={exitButton}>
-        <Text style={styles.exitButtonText}>EXIT</Text>
+        <Text style={styles.exitButtonText}>Cerrar sesión</Text>
       </TouchableOpacity>
       
     </SafeAreaView>
