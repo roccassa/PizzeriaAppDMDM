@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator();
 export default function NavigationStackPizzeria(){
     return(
         <Stack.Navigator>
-            <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: true}} />
+            <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false}} />
             <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: true}} />
             <Stack.Screen name="Customer" component={CustomerScreen} options={{ headerShown: true}} />
             <Stack.Screen name="Menu" component={MenuScreen} options={{ headerShown: true}} />
