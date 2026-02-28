@@ -44,7 +44,7 @@ return (
     <SafeAreaView style={styles.container}>
       
    
-      <Text style={styles.title}>MENU PRINCIPAL</Text>
+      <Text style={styles.titleHome}>MENU PRINCIPAL</Text>
 
       <View style={styles.buttonsContainer}>
         
@@ -78,10 +78,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: 80, 
   },
-  title: {
+  titleHome: {
     fontSize: 28,
     color: '#000',
-    marginBottom: 60, 
+    marginBottom: 100, 
+    marginTop: 10,
+    fontWeight: 'bold'
   },
   buttonsContainer: {
     width: '100%',
@@ -94,10 +96,10 @@ const styles = StyleSheet.create({
     paddingVertical: 18,
     borderRadius: 15,
     alignItems: 'center',
-    marginBottom: 150, 
+    marginBottom: 100, 
   },
   usButton: {
-    width: '35%', 
+    width: '40%', 
   },
   menuButtonText: {
     color: '#000',
@@ -108,11 +110,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 30,
     borderRadius: 20,
-    marginBottom: 40,
+    marginBottom: 70,
   },
   exitButtonText: {
     color: '#000',
-    fontSize: 10,
+    fontSize: 14,
     fontWeight: 'bold',
   }
 });

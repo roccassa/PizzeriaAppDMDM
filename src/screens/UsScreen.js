@@ -17,8 +17,6 @@ export default function UsScreen(props){
         navigation.navigate("Home");
     }
 
-
-
     const exitButton = ()=>{
         Alert.alert(
             "Cerrar sesión",
@@ -38,48 +36,48 @@ export default function UsScreen(props){
 
     return(
     <SafeAreaView style={styles.safeArea}>
-      <ScrollView contentContainerStyle={styles.container}>
+        <ScrollView contentContainerStyle={styles.container}>
 
-        <Text style={styles.title}>Sobre Nosotros</Text>
+            <Text style={styles.title}>Sobre Nosotros</Text>
 
-        <Text style={styles.description}>
-          Somos una pizzería comprometida con brindar un servicio de calidad,
-          ofreciendo productos frescos y una experiencia única.
-        </Text>
+            <Text style={styles.description}>
+            Somos una pizzería comprometida con brindar un servicio de calidad,
+            ofreciendo productos frescos y una experiencia única.
+            </Text>
 
-        <View style={styles.section}>
-          <Text style={styles.subtitle}>Misión</Text>
-          <Text style={styles.text}>
-            Ofrecer pizzas artesanales elaboradas con ingredientes frescos y locales,
-            brindando a nuestros clientes una experiencia gastronómica cálida y auténtica
-            que combine tradición italiana con el sabor único de nuestra comunidad.
-          </Text>
-        </View>
+            <View style={styles.section}>
+            <Text style={styles.subtitle}>Misión</Text>
+            <Text style={styles.text}>
+                Ofrecer pizzas artesanales elaboradas con ingredientes frescos y locales,
+                brindando a nuestros clientes una experiencia gastronómica cálida y auténtica
+                que combine tradición italiana con el sabor único de nuestra comunidad.
+            </Text>
+            </View>
 
-        <View style={styles.section}>
-          <Text style={styles.subtitle}>Visión</Text>
-          <Text style={styles.text}>
-            Convertirnos en la pizzería favorita de la ciudad, reconocida por la
-            calidad de nuestras recetas, la innovación en sabores y el ambiente
-            acogedor que invita a compartir momentos inolvidables.
-          </Text>
-        </View>
+            <View style={styles.section}>
+            <Text style={styles.subtitle}>Visión</Text>
+            <Text style={styles.text}>
+                Convertirnos en la pizzería favorita de la ciudad, reconocida por la
+                calidad de nuestras recetas, la innovación en sabores y el ambiente
+                acogedor que invita a compartir momentos inolvidables.
+            </Text>
+            </View>
 
-        <View style={styles.section}>
-          <Text style={styles.subtitle}>Valores</Text>
-          <View>
-            <Text style={styles.listItem}>• Calidad</Text>
-            <Text style={styles.listItem}>• Pasión</Text>
-            <Text style={styles.listItem}>• Hospitalidad</Text>
-            <Text style={styles.listItem}>• Sostenibilidad</Text>
-          </View>
-        </View>
+            <View style={styles.section}>
+            <Text style={styles.subtitle}>Valores</Text>
+            <View>
+                <Text style={styles.listItem}>• Calidad</Text>
+                <Text style={styles.listItem}>• Pasión</Text>
+                <Text style={styles.listItem}>• Hospitalidad</Text>
+                <Text style={styles.listItem}>• Sostenibilidad</Text>
+            </View>
+            </View>
 
-        <TouchableOpacity style={styles.exitButton} onPress={exitButton}>
-          <Text style={styles.exitButtonText}>Cerrar sesión</Text>
-        </TouchableOpacity>
+            <TouchableOpacity style={styles.exitButton} onPress={exitButton}>
+            <Text style={styles.exitButtonText}>Cerrar sesión</Text>
+            </TouchableOpacity>
 
-      </ScrollView>
+        </ScrollView>
     </SafeAreaView>
     );
 
@@ -100,7 +98,9 @@ safeArea: {
   title: {
     fontSize: 28,
     color: '#000',
-    marginBottom: 60, 
+    marginBottom: 10, 
+    marginTop: 35,
+    fontWeight: 'bold'
   },
  description: {
     fontSize: 16,
@@ -140,7 +140,7 @@ safeArea: {
   },
   exitButtonText: {
     color: '#000',
-    fontSize: 10,
+    fontSize: 13,
     fontWeight: 'bold',
   }
 });
