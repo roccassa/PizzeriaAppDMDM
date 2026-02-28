@@ -62,9 +62,11 @@ return (
         </TouchableOpacity>
 
       </View>
+
       <TouchableOpacity style={styles.exitButton} onPress={exitButton}>
         <Text style={styles.exitButtonText}>EXIT</Text>
       </TouchableOpacity>
+      
     </SafeAreaView>
   );
 }

@@ -12,11 +12,11 @@ export default function LoginScreen(props){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const validacionUsuario = ()=>{
-        const usuario1 = "tony";
+        const usuario1 = "1";
         const usuario2 = "alex";
         const usuario3 = "chava";
 
-        const password1 = "tony123";
+        const password1 = "1";
         const password2 = "alex123";
         const password3 = "siuuu777";
         

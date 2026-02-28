@@ -20,7 +20,7 @@ export default function NavigationStackPizzeria(){
             <Stack.Screen name="Menu" component={MenuScreen} options={{ headerShown: true}} />
             <Stack.Screen name="Ordenes" component={OrdenesScreen} options={{ headerShown: true}} />
             <Stack.Screen name="Ordenar" component={OrdenarScreen} options={{ headerShown: true}} />
-            <Stack.Screen name="Us" component={UsScreen} options={{ headerShown: true}} />
+            <Stack.Screen name="Us" component={UsScreen} options={{ headerShown: false}} />
         </Stack.Navigator>
     );
 }
