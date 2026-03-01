@@ -4,7 +4,8 @@ import { SafeAreaView,
   View, 
   TouchableOpacity, 
   StyleSheet, 
-  Alert
+  Alert,
+  ImageBackground
    } from "react-native";
 
 
@@ -42,39 +43,48 @@ export default function HomeScreen(props){
    
 
 return (
-    <SafeAreaView style={styles.container}>
-      
-      <Text style={styles.titleHome}>MENU PRINCIPAL</Text>
-
-      <View style={styles.buttonsContainer}>
+ <ImageBackground
+    source={require("../../assets/fondo_pizza.jpg")} 
+    style={styles.backgroundImage}
+    resizeMode="cover">
         
-        <TouchableOpacity style={styles.menuButton} onPress={goToOrdenesScreen}>
-          <Text style={styles.menuButtonText}>Employed</Text>
-        </TouchableOpacity>
+    <View style={styles.overlay}>
 
-        <TouchableOpacity style={styles.menuButton} onPress={goToCustomerScreen}>
-          <Text style={styles.menuButtonText}>Customer</Text>
-        </TouchableOpacity>
+        <SafeAreaView style={styles.container}>
+          
+          <Text style={styles.titleHome}>MENU PRINCIPAL</Text>
 
-     
-        <TouchableOpacity style={[styles.menuButton, styles.usButton]} onPress={goToUsScreen}>
-          <Text style={styles.menuButtonText}>US</Text>
-        </TouchableOpacity>
+          <View style={styles.buttonsContainer}>
+            
+            <TouchableOpacity style={styles.menuButton} onPress={goToOrdenesScreen}>
+              <Text style={styles.menuButtonText}>Employed</Text>
+            </TouchableOpacity>
 
+            <TouchableOpacity style={styles.menuButton} onPress={goToCustomerScreen}>
+              <Text style={styles.menuButtonText}>Customer</Text>
+            </TouchableOpacity>
+
+        
+            <TouchableOpacity style={[styles.menuButton, styles.usButton]} onPress={goToUsScreen}>
+              <Text style={styles.menuButtonText}>US</Text>
+            </TouchableOpacity>
+
+          </View>
+
+          <TouchableOpacity style={styles.exitButton} onPress={exitButton}>
+            <Text style={styles.exitButtonText}>Cerrar sesión</Text>
+          </TouchableOpacity>
+          
+        </SafeAreaView>
       </View>
-
-      <TouchableOpacity style={styles.exitButton} onPress={exitButton}>
-        <Text style={styles.exitButtonText}>Cerrar sesión</Text>
-      </TouchableOpacity>
-      
-    </SafeAreaView>
+    </ImageBackground>
+    
   );
 }
 
 const styles = StyleSheet.create({
   container: {
       flex: 1,
-      backgroundColor: '#f3e9b4ff', 
       alignItems: 'center',
       paddingTop: 80, 
     },
@@ -116,5 +126,12 @@ const styles = StyleSheet.create({
       color: '#000',
       fontSize: 14,
       fontWeight: 'bold',
-    }
+    },
+  backgroundImage: {
+      flex: 1,
+  },
+  overlay: {
+      flex: 1,
+      backgroundColor: "rgba(255, 255, 255, 0.7)", 
+  }
 });

@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, Text, Button } from "react-native";
+import { SafeAreaView, Text, Button, ImageBackground } from "react-native";
 
 
 export default function OrdenesScreen(props){

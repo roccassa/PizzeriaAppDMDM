@@ -6,7 +6,7 @@ import { SafeAreaView,
   TouchableOpacity, 
   StyleSheet, 
   Alert,
-  ScrollView
+  ImageBackground
  } from "react-native";
 
 
@@ -42,32 +42,39 @@ export default function CustomerScreen(props){
 
         
 return (
-    <SafeAreaView style={styles.container}>
-   
-      <Text style={styles.titleCustomer}>CLIENTES</Text>
-
-    <View style={styles.buttonsContainer}>
-      <TouchableOpacity style={styles.menuButton} onPress={goToMenuScreen}>
-        <Text style={styles.menuButtonText}>Menu</Text>
-      </TouchableOpacity>
+  <ImageBackground
+      source={require("../../assets/fondo_pizza.jpg")} 
+      style={styles.backgroundImage}
+      resizeMode="cover">
+                  
+      <View style={styles.overlay}>
+        <SafeAreaView style={styles.container}>
       
-      <TouchableOpacity style={styles.menuButton} onPress={goToOrdenarScreen}>
-        <Text style={styles.menuButtonText}>Ordenar</Text>
-      </TouchableOpacity>
-    </View>
+          <Text style={styles.titleCustomer}>CLIENTES</Text>
 
-      <TouchableOpacity style={styles.exitButton} onPress={exitButton}>
-        <Text style={styles.exitButtonText}>Cerrar sesión</Text>
-      </TouchableOpacity>
-      
-    </SafeAreaView>
+        <View style={styles.buttonsContainer}>
+          <TouchableOpacity style={styles.menuButton} onPress={goToMenuScreen}>
+            <Text style={styles.menuButtonText}>Menu</Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity style={styles.menuButton} onPress={goToOrdenarScreen}>
+            <Text style={styles.menuButtonText}>Ordenar</Text>
+          </TouchableOpacity>
+        </View>
+
+          <TouchableOpacity style={styles.exitButton} onPress={exitButton}>
+            <Text style={styles.exitButtonText}>Cerrar sesión</Text>
+          </TouchableOpacity>
+          
+        </SafeAreaView>
+      </View>
+    </ImageBackground>
   );
 }
  
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f3e9b4ff', 
     alignItems: 'center',
     paddingTop: 80, 
   },
@@ -106,6 +113,13 @@ const styles = StyleSheet.create({
     color: '#000',
     fontSize: 14,
     fontWeight: 'bold',
+  },
+    backgroundImage: {
+      flex: 1,
+  },
+  overlay: {
+      flex: 1,
+      backgroundColor: "rgba(255, 255, 255, 0.7)", 
   }
   
 });

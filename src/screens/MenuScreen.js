@@ -4,7 +4,8 @@ import { SafeAreaView,
   View, 
   TouchableOpacity, 
   StyleSheet, 
-  Alert
+  Alert,
+  ImageBackground
    } from "react-native";
 
 
@@ -38,35 +39,43 @@ export default function MenuScreen(props){
     }
 
     return(
-        <SafeAreaView style={styles.container}>
-            <Text style={styles.titleMenu}>MENU</Text>
 
-            <View style={styles.table}>
+        <ImageBackground
+              source={require("../../assets/fondo_pizza.jpg")} 
+              style={styles.backgroundImage}
+              resizeMode="cover">
+                          
+              <View style={styles.overlay}>
+                <SafeAreaView style={styles.container}>
+                    <Text style={styles.titleMenu}>MENU</Text>
 
-                <View style={styles.row}>
-                    <Text style={[styles.itemTable, styles.headerText]}>Tipo</Text>
-                    <Text style={[styles.itemTable, styles.headerText]}>Chica</Text>
-                    <Text style={[styles.itemTable, styles.headerText]}>Mediana</Text>
-                    <Text style={[styles.itemTable, styles.headerText]}>Grande</Text>
-                </View>
+                    <View style={styles.table}>
 
-                {menu.map((item, index) => (
-                    <View key={index} style={styles.row}>
-                    <Text style={styles.itemTable}>{item.tipo}</Text>
-                    <Text style={styles.itemTable}>${item.chica}</Text>
-                    <Text style={styles.itemTable}>${item.mediana}</Text>
-                    <Text style={styles.itemTable}>${item.grande}</Text>
-                </View>
-                ))}
+                        <View style={styles.row}>
+                            <Text style={[styles.itemTable, styles.headerText]}>Tipo</Text>
+                            <Text style={[styles.itemTable, styles.headerText]}>Chica</Text>
+                            <Text style={[styles.itemTable, styles.headerText]}>Mediana</Text>
+                            <Text style={[styles.itemTable, styles.headerText]}>Grande</Text>
+                        </View>
 
+                        {menu.map((item, index) => (
+                            <View key={index} style={styles.row}>
+                            <Text style={styles.itemTable}>{item.tipo}</Text>
+                            <Text style={styles.itemTable}>${item.chica}</Text>
+                            <Text style={styles.itemTable}>${item.mediana}</Text>
+                            <Text style={styles.itemTable}>${item.grande}</Text>
+                        </View>
+                        ))}
+
+                    </View>
+
+                    <TouchableOpacity style={styles.exitButtonMenu} onPress={exitButton}>
+                    <Text style={styles.exitButtonText}>Cerrar sesión</Text>
+                    </TouchableOpacity>
+                </SafeAreaView>
             </View>
-
-            <TouchableOpacity style={styles.exitButtonMenu} onPress={exitButton}>
-            <Text style={styles.exitButtonText}>Cerrar sesión</Text>
-            </TouchableOpacity>
-        </SafeAreaView>
-    )
-
+        </ImageBackground>
+    );
 }
 
 
@@ -74,7 +83,6 @@ const styles = StyleSheet.create({
   
     container: {
         flex: 1,
-        backgroundColor: '#f3e9b4ff', 
         alignItems: 'center',
         paddingTop: 20, 
     },
@@ -111,5 +119,12 @@ const styles = StyleSheet.create({
         color: '#000',
         fontSize: 14,
         fontWeight: 'bold',
-    }
+    },
+      backgroundImage: {
+      flex: 1,
+  },
+  overlay: {
+      flex: 1,
+      backgroundColor: "rgba(255, 255, 255, 0.7)", 
+  }
 });

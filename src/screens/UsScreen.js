@@ -5,7 +5,8 @@ import { SafeAreaView,
   TouchableOpacity, 
   StyleSheet, 
   Alert,
-  ScrollView
+  ScrollView,
+  ImageBackground
  } from "react-native";
 
 
@@ -34,64 +35,69 @@ export default function UsScreen(props){
     }
 
 
-    return(
-    <SafeAreaView style={styles.safeArea}>
-        <ScrollView contentContainerStyle={styles.container}>
+return(
+    <ImageBackground
+        source={require("../../assets/fondo_pizza.jpg")} 
+        style={styles.backgroundImage}
+        resizeMode="cover">
+                
+        <View style={styles.overlay}>
+            <SafeAreaView style={styles.safeArea}>
+                <ScrollView contentContainerStyle={styles.container}>
 
-            <Text style={styles.titleUS}>Sobre Nosotros</Text>
+                    <Text style={styles.titleUS}>Sobre Nossotros</Text>
 
-            <Text style={styles.description}>
-                Somos una pizzería comprometida con brindar un servicio de calidad,
-                ofreciendo productos frescos y una experiencia única.
-            </Text>
+                    <Text style={styles.description}>
+                        Somos una pizzería comprometida con brindar un servicio de calidad,
+                        ofreciendo productos frescos y una experiencia única.
+                    </Text>
 
-            <View style={styles.section}>
-                <Text style={styles.subtitle}>Misión</Text>
-                <Text style={styles.text}>
-                    Ofrecer pizzas artesanales elaboradas con ingredientes frescos y locales,
-                    brindando a nuestros clientes una experiencia gastronómica cálida y auténtica
-                    que combine tradición italiana con el sabor único de nuestra comunidad.
-                </Text>
-            </View>
+                    <View style={styles.section}>
+                        <Text style={styles.subtitle}>Misión</Text>
+                        <Text style={styles.text}>
+                            Ofrecer pizzas artesanales elaboradas con ingredientes frescos y locales,
+                            brindando a nuestros clientes una experiencia gastronómica cálida y auténtica
+                            que combine tradición italiana con el sabor único de nuestra comunidad.
+                        </Text>
+                    </View>
 
-            <View style={styles.section}>
-                <Text style={styles.subtitle}>Visión</Text>
-                <Text style={styles.text}>
-                    Convertirnos en la pizzería favorita de la ciudad, reconocida por la
-                    calidad de nuestras recetas, la innovación en sabores y el ambiente
-                    acogedor que invita a compartir momentos inolvidables.
-                </Text>
-            </View>
+                    <View style={styles.section}>
+                        <Text style={styles.subtitle}>Visión</Text>
+                        <Text style={styles.text}>
+                            Convertirnos en la pizzería favorita de la ciudad, reconocida por la
+                            calidad de nuestras recetas, la innovación en sabores y el ambiente
+                            acogedor que invita a compartir momentos inolvidables.
+                        </Text>
+                    </View>
 
-            <View style={styles.section}>
-                <Text style={styles.subtitle}>Valores</Text>
-                <View>
-                    <Text style={styles.listItem}>• Calidad</Text>
-                    <Text style={styles.listItem}>• Pasión</Text>
-                    <Text style={styles.listItem}>• Hospitalidad</Text>
-                    <Text style={styles.listItem}>• Sostenibilidad</Text>
-                </View>
-            </View>
+                    <View style={styles.section}>
+                        <Text style={styles.subtitle}>Valores</Text>
+                        <View>
+                            <Text style={styles.listItem}>• Calidad</Text>
+                            <Text style={styles.listItem}>• Pasión</Text>
+                            <Text style={styles.listItem}>• Hospitalidad</Text>
+                            <Text style={styles.listItem}>• Sostenibilidad</Text>
+                        </View>
+                    </View>
 
-            <TouchableOpacity style={styles.exitButton} onPress={exitButton}>
-            <Text style={styles.exitButtonText}>Cerrar sesión</Text>
-            </TouchableOpacity>
-        </ScrollView>
-    </SafeAreaView>
-    );
-
+                    <TouchableOpacity style={styles.exitButton} onPress={exitButton}>
+                    <Text style={styles.exitButtonText}>Cerrar sesión</Text>
+                    </TouchableOpacity>
+                </ScrollView>
+            </SafeAreaView>
+        </View>
+    </ImageBackground>
+);
 }
 
 const styles = StyleSheet.create({
     
     container: {
-        backgroundColor: '#f3e9b4ff', 
         alignItems: 'center',
         paddingTop: 20, 
     },
     safeArea: {
         flex: 1,
-        backgroundColor: "#f3e9b4",
     },
     titleUS: {
         fontSize: 28,
@@ -141,5 +147,12 @@ const styles = StyleSheet.create({
         color: '#000',
         fontSize: 14,
         fontWeight: 'bold',
+  },
+    backgroundImage: {
+      flex: 1,
+  },
+    overlay: {
+      flex: 1,
+      backgroundColor: "rgba(255, 255, 255, 0.7)", 
   }
 });

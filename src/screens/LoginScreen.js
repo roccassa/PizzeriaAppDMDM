@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { SafeAreaView, Text, View, TextInput, TouchableOpacity, StyleSheet, Alert,BackHandler,Image } from "react-native";
+import { SafeAreaView, Text, View, TextInput, TouchableOpacity, StyleSheet, Alert,BackHandler,Image, ImageBackground } from "react-native";
 
 
 export default function LoginScreen(props){
@@ -38,47 +38,54 @@ export default function LoginScreen(props){
     }
     
     return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>
-        BIENVENIDO A{'\n'}PIZZERIA TECNM
-      </Text>
-      <Image 
-     source={require('../../assets/istockphoto-1366259730-612x612.jpg')} style={styles.logo}resizeMode="contain" 
-    />
-      <Text style={styles.subtitle}>Inicia sesión</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="USUARIO"
-        placeholderTextColor="#000"
-        value={username}
-        onChangeText={setUsername}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="CONTRASEÑA"
-        placeholderTextColor="#000"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry={false} 
-      />
-        <View style={styles.loginContainer}>
-        <TouchableOpacity style={styles.loginButton} onPress={validacionUsuario}>
-          <Text style={styles.loginButtonText}>ENTRAR</Text>
-        </TouchableOpacity>
+      <ImageBackground
+        source={require("../../assets/fondo_login.jpg")} 
+        style={styles.backgroundImage}
+        resizeMode="cover">
+        
+        <View style={styles.overlay}>
+          <SafeAreaView style={styles.container}>
+            <Text style={styles.title}>
+              BIENVENIDO A{'\n'}PIZZERIA TECNM
+            </Text>
+            <Image 
+          source={require('../../assets/istockphoto-1366259730-612x612.jpg')} style={styles.logo}resizeMode="contain" 
+          />
+            <Text style={styles.subtitle}>Inicia sesión</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="USUARIO"
+              placeholderTextColor="#000"
+              value={username}
+              onChangeText={setUsername}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="CONTRASEÑA"
+              placeholderTextColor="#000"
+              value={password}
+              onChangeText={setPassword}
+              secureTextEntry={false} 
+            />
+              <View style={styles.loginContainer}>
+              <TouchableOpacity style={styles.loginButton} onPress={validacionUsuario}>
+                <Text style={styles.loginButtonText}>ENTRAR</Text>
+              </TouchableOpacity>
+              </View>
+            <View style={styles.exitContainer}>
+              <TouchableOpacity style={styles.exitButton} onPress={adios}>
+                <Text style={styles.exitButtonText}>Cerrar sesión</Text>
+              </TouchableOpacity>
+            </View>
+          </SafeAreaView>
         </View>
-      <View style={styles.exitContainer}>
-        <TouchableOpacity style={styles.exitButton} onPress={adios}>
-          <Text style={styles.exitButtonText}>Cerrar sesión</Text>
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
+    </ImageBackground>
   )
 
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#eaf4afff', 
     alignItems: 'center',
     paddingTop: 60, 
   },
@@ -99,6 +106,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#000',
     marginBottom: 30,
+    fontWeight:'bold',
   },
   input: {
     width: '80%',
@@ -127,6 +135,7 @@ const styles = StyleSheet.create({
   loginButtonText: {
     color: '#000000ff',
     fontSize: 12,
+    fontWeight:'bold',
   },
   exitContainer: {
     width: '100%',
@@ -142,7 +151,15 @@ const styles = StyleSheet.create({
     marginBottom: 115
   },
   exitButtonText: {
-    color: '#000',
-    fontSize: 12,
-  } 
+      color: '#000',
+      fontSize: 14,
+      fontWeight: 'bold',
+  },
+  backgroundImage: {
+    flex: 1,
+  },
+  overlay: {
+    flex: 1,
+    backgroundColor: "rgba(255, 255, 255, 0.7)", 
+  }
 })
