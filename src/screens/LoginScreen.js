@@ -25,6 +25,8 @@ export default function LoginScreen(props){
         const validado3 = (username === usuario3 && password === password3);
 
         if(validado || validado2 || validado3){
+            setUsername('');
+            setPassword('');
             goToHomeScreen();
         }else{
             Alert.alert("Error,usuario o contraseña invalida")
