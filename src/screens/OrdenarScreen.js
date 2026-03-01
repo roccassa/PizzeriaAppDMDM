@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { SafeAreaView, Text, ImageBackground,View,TouchableOpacity,Alert,TextInput,StyleSheet } from "react-native";
 import { Picker } from "@react-native-picker/picker";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function OrdenarScreen(props){
@@ -21,16 +22,49 @@ export default function OrdenarScreen(props){
                 }
             ]
         )
-    }
+    };
 
-    const saveOrderButton = ()=>{
-        
-    }
     const [tipoPizza, setTipoPizza] = useState('');
     const [tamanoPizza, setTamanoPizza] = useState('');
     const [cantidad, setCantidad] = useState('');
     const tiposDePizza = ["Hawaiana", "Peperoni", "Margarita", "Mexicana", "Especial"];
     const tamanos = ["Chica", "Mediana", "Grande"];
+    const [listaOrdenes, setListaOrdenes] = useState([]);
+
+    const guardado = async () => {
+        if (!tipoPizza || !tamanoPizza || !cantidad) {
+            Alert.alert("Error", "Por favor completa todos los campos del pedido.");
+            return;
+        }
+
+        const datosOrden = {
+            tipo: tipoPizza,
+            tamano: tamanoPizza,
+            cantidad: cantidad
+        };
+
+        try {
+            const ordenesGuardadas = await AsyncStorage.getItem('carritoOrdenes');
+          
+            const listaActual = ordenesGuardadas ? JSON.parse(ordenesGuardadas) : [];
+
+         
+            listaActual.push(datosOrden);
+
+           
+            await AsyncStorage.setItem('carritoOrdenes', JSON.stringify(listaActual));
+
+            
+            Alert.alert("¡Guardado!", "La pizza se agregó a la orden. Puedes seguir pidiendo o regresar al menú.");
+            setTipoPizza('');
+            setTamanoPizza('');
+            setCantidad('');
+              
+        } catch (error) {
+            Alert.alert("Error", "No se pudo guardar la orden.");
+            console.log(error);
+        }
+    };
 
 return (
         <ImageBackground
@@ -83,7 +117,7 @@ return (
                     />
 
                    
-                    <TouchableOpacity style={styles.saveButton} onPress={saveOrderButton}>
+                    <TouchableOpacity style={styles.saveButton} onPress={guardado}>
                         <Text style={styles.saveButtonText}>SAVE</Text>
                     </TouchableOpacity>
 
