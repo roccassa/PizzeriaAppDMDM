@@ -75,7 +75,7 @@ return (
             <View style={styles.overlay}>
                 <SafeAreaView style={styles.container}>
                     
-                    <Text style={styles.title}>ORDER</Text>
+                    <Text style={styles.title}>ORDENAR</Text>
 
                  
                     <View style={styles.pickerContainer}>
@@ -84,7 +84,7 @@ return (
                             onValueChange={(itemValue) => setTipoPizza(itemValue)}
                             style={styles.picker}
                         >
-                            <Picker.Item label="Cual te gusta mas ?" value="" color="#888" />
+                            <Picker.Item label="¿Cuál te gusta mas?" value="" color="#888" />
                             {tiposDePizza.map((tipo, index) => (
                                 <Picker.Item key={index} label={tipo} value={tipo} />
                             ))}
@@ -98,7 +98,7 @@ return (
                             onValueChange={(itemValue) => setTamanoPizza(itemValue)}
                             style={styles.picker}
                         >
-                            <Picker.Item label="Que tamaño ?" value="" color="#888" />
+                            <Picker.Item label="¿Qué tamaño?" value="" color="#4e4e4e" />
                             {tamanos.map((tamano, index) => (
                                 <Picker.Item key={index} label={tamano} value={tamano} />
                             ))}
@@ -108,7 +108,7 @@ return (
                    
                     <TextInput
                         style={styles.input}
-                        placeholder="cuantas pizzas quieres ?"
+                        placeholder="¿Cuántas pizzas quieres?"
                         placeholderTextColor="#888"
                         keyboardType="numeric" 
                         value={cantidad}
@@ -116,17 +116,17 @@ return (
                         maxLength={2} 
                     />
 
-                   
+                   <View style={StyleSheet.buttonsContainer}>
+
                     <TouchableOpacity style={styles.saveButton} onPress={guardado}>
-                        <Text style={styles.saveButtonText}>SAVE</Text>
+                        <Text style={styles.saveButtonText}>Guardar</Text>
                     </TouchableOpacity>
 
+                   </View>
                     
-                    <View style={styles.exitContainer}>
-                        <TouchableOpacity style={styles.exitButton} onPress={exitButton}>
-                            <Text style={styles.exitButtonText}>EXIT</Text>
-                        </TouchableOpacity>
-                    </View>
+                    <TouchableOpacity style={styles.exitButton} onPress={exitButton}>
+                      <Text style={styles.exitButtonText}>Cerrar sesión</Text>
+                    </TouchableOpacity>
 
                 </SafeAreaView>
             </View>
@@ -148,10 +148,10 @@ const styles = StyleSheet.create({
         paddingTop: 40,
     },
     title: {
-        fontSize: 32,
+        fontSize: 28,
         color: '#000',
         marginBottom: 50,
-        marginTop: 40,
+        marginTop: 50,
         fontWeight: 'bold',
     },
     pickerContainer: {
@@ -195,16 +195,22 @@ const styles = StyleSheet.create({
         marginBottom: 40,
     },
     exitButton: {
-        backgroundColor: '#FFAA8F', 
+        backgroundColor: 'rgb(184, 22, 22)', 
         paddingVertical: 10,
         paddingHorizontal: 30,
         borderRadius: 20,
+        marginTop: 180,
     },
     exitButtonText: {
-        color: '#000',
-        fontSize: 12,
+        color: '#ffffff',
+        fontSize: 14,
         fontWeight: 'bold',
-    }
+  },
+    buttonsContainer: {
+      width: '100%',
+      alignItems: 'center',
+      flex: 1, 
+    },
 });
 
 

@@ -99,18 +99,19 @@ const styles = StyleSheet.create({
     marginBottom: 100, 
   },
   menuButtonText: {
+    fontWeight: 'bold',
     color: '#000',
     fontSize: 16,
   },
   exitButton: {
-    backgroundColor: '#ff0000ff', 
+    backgroundColor: 'rgb(184, 22, 22)', 
     paddingVertical: 10,
     paddingHorizontal: 30,
     borderRadius: 20,
     marginBottom: 70,
   },
   exitButtonText: {
-    color: '#000',
+    color: '#ffffff',
     fontSize: 14,
     fontWeight: 'bold',
   },

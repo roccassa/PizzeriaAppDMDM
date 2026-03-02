@@ -12,13 +12,13 @@ export default function LoginScreen(props){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const validacionUsuario = ()=>{
-        const usuario1 = "1";
-        const usuario2 = "alex";
-        const usuario3 = "chava";
+        const usuario1 = "Tony";
+        const usuario2 = "Alejandro";
+        const usuario3 = "Chava";
 
-        const password1 = "1";
-        const password2 = "alex123";
-        const password3 = "siuuu777";
+        const password1 = "123";
+        const password2 = "789";
+        const password3 = "777";
         
         const validado = (username === usuario1 && password === password1);
         const validado2 = (username === usuario2 && password === password2);
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   subtitle: {
-    fontSize: 18,
+    fontSize: 24,
     color: '#000',
     marginBottom: 30,
     fontWeight:'bold',
@@ -146,14 +146,14 @@ const styles = StyleSheet.create({
     marginTop: 125,
   },
   exitButton: {
-    backgroundColor: '#ff0000ff', 
+    backgroundColor: 'rgb(184, 22, 22)', 
     paddingVertical: 12,
     paddingHorizontal: 30,
     borderRadius: 20, 
     marginBottom: 115
   },
   exitButtonText: {
-      color: '#000',
+      color: '#ffffff',
       fontSize: 14,
       fontWeight: 'bold',
   },

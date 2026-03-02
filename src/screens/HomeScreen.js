@@ -57,16 +57,16 @@ return (
           <View style={styles.buttonsContainer}>
             
             <TouchableOpacity style={styles.menuButton} onPress={goToOrdenesScreen}>
-              <Text style={styles.menuButtonText}>Employed</Text>
+              <Text style={styles.menuButtonText}>Empleados</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.menuButton} onPress={goToCustomerScreen}>
-              <Text style={styles.menuButtonText}>Customer</Text>
+              <Text style={styles.menuButtonText}>Clientes</Text>
             </TouchableOpacity>
 
         
             <TouchableOpacity style={[styles.menuButton, styles.usButton]} onPress={goToUsScreen}>
-              <Text style={styles.menuButtonText}>US</Text>
+              <Text style={styles.menuButtonText}>Nosotros</Text>
             </TouchableOpacity>
 
           </View>
@@ -114,16 +114,17 @@ const styles = StyleSheet.create({
   menuButtonText: {
       color: '#000',
       fontSize: 16,
+      fontWeight: 'bold',
     },
   exitButton: {
-      backgroundColor: '#ff0000ff', 
+      backgroundColor: 'rgb(184, 22, 22)', 
       paddingVertical: 10,
       paddingHorizontal: 30,
       borderRadius: 20,
       marginBottom: 70,
     },
   exitButtonText: {
-      color: '#000',
+      color: '#ffffff',
       fontSize: 14,
       fontWeight: 'bold',
     },

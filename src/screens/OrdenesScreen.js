@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Text, View, StyleSheet, TouchableOpacity, Alert, FlatList } from 'react-native';
+import { SafeAreaView, ImageBackground, Text, View, StyleSheet, TouchableOpacity, Alert, FlatList } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function OrdenesScreen(props) {
@@ -53,34 +53,38 @@ export default function OrdenesScreen(props) {
   );
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>ORDERS</Text>
+    <ImageBackground
+      source={require("../../assets/fondo_pizza.jpg")} 
+      style={styles.backgroundImage}
+      resizeMode="cover">
+        <View style={styles.overlay}>
+            <SafeAreaView style={styles.container}>
+              <Text style={styles.title}>ORDENES</Text>
 
-      {ordenes.length === 0 ? (
-        <Text style={styles.emptyText}>Aún no hay órdenes guardadas.</Text>
-      ) : (
-        <FlatList
-          data={ordenes}
-          keyExtractor={(item, index) => index.toString()}
-          renderItem={renderizarOrden}
-          style={styles.list}
-          showsVerticalScrollIndicator={false}
-        />
-      )}
+              {ordenes.length === 0 ? (
+                <Text style={styles.emptyText}>Aún no hay órdenes guardadas.</Text>
+              ) : (
+                <FlatList
+                  data={ordenes}
+                  keyExtractor={(item, index) => index.toString()}
+                  renderItem={renderizarOrden}
+                  style={styles.list}
+                  showsVerticalScrollIndicator={false}
+                />
+              )}
 
-      <View style={styles.exitContainer}>
-        <TouchableOpacity style={styles.exitButton} onPress={exitButton}>
-          <Text style={styles.exitButtonText}>EXIT</Text>
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
+              <TouchableOpacity style={styles.exitButton} onPress={exitButton}>
+                  <Text style={styles.exitButtonText}>Cerrar sesión</Text>
+              </TouchableOpacity>
+            </SafeAreaView>
+        </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    backgroundColor: '#F3D0B4', 
     alignItems: 'center',
     paddingTop: 30,
   },
@@ -89,6 +93,7 @@ const styles = StyleSheet.create({
     color: '#000',
     marginBottom: 30,
     fontWeight: 'bold',
+    marginTop: 60,
   },
   list: {
     width: '100%',
@@ -126,14 +131,22 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   exitButton: {
-    backgroundColor: '#ff0000ff', 
+    backgroundColor: 'rgb(184, 22, 22)', 
     paddingVertical: 10,
     paddingHorizontal: 30,
     borderRadius: 20,
-  },
+    marginBottom: 70,
+    },
   exitButtonText: {
-    color: '#000',
-    fontSize: 12,
-    fontWeight: 'bold',
-  }
+      color: '#ffffff',
+      fontSize: 14,
+      fontWeight: 'bold',
+    },
+     overlay: {
+        flex: 1,
+        backgroundColor: "rgba(255, 255, 255, 0.7)", 
+    },
+     backgroundImage: {
+        flex: 1,
+    },
 });

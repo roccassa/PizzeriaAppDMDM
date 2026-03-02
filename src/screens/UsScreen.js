@@ -45,7 +45,7 @@ return(
             <SafeAreaView style={styles.safeArea}>
                 <ScrollView contentContainerStyle={styles.container}>
 
-                    <Text style={styles.titleUS}>Sobre Nossotros</Text>
+                    <Text style={styles.titleUS}>SOBRE NOSOTROS</Text>
 
                     <Text style={styles.description}>
                         Somos una pizzería comprometida con brindar un servicio de calidad,
@@ -81,7 +81,7 @@ return(
                     </View>
 
                     <TouchableOpacity style={styles.exitButton} onPress={exitButton}>
-                    <Text style={styles.exitButtonText}>Cerrar sesión</Text>
+                      <Text style={styles.exitButtonText}>Cerrar sesión</Text>
                     </TouchableOpacity>
                 </ScrollView>
             </SafeAreaView>
@@ -103,14 +103,15 @@ const styles = StyleSheet.create({
         fontSize: 28,
         color: '#000',
         marginBottom: 10, 
-        marginTop: 60,
+        marginTop: 70,
         fontWeight: 'bold'
     },
     description: {
         fontSize: 16,
         textAlign: "center",
+        fontWeight: 400,
         marginBottom: 25,
-        color: "#444",
+        color: "#000000",
     },
     section: {
         marginBottom: 25,
@@ -125,10 +126,12 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 16,
         lineHeight: 22,
-        color: "#555",
+        fontWeight: 400,
+        color: "#000000",
     },
     listItem: {
         fontSize: 16,
+        fontWeight:400,
         marginBottom: 4,
     },
     buttonsContainer: {
@@ -137,14 +140,14 @@ const styles = StyleSheet.create({
         flex: 1, 
     },
     exitButton: {
-        backgroundColor: '#ff0000ff', 
+        backgroundColor: 'rgb(184, 22, 22)', 
         paddingVertical: 10,
         paddingHorizontal: 30,
         borderRadius: 20,
         marginBottom: 70,
     },
     exitButtonText: {
-        color: '#000',
+        color: '#ffffff',
         fontSize: 14,
         fontWeight: 'bold',
   },
